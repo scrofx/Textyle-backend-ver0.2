@@ -1,0 +1,19 @@
+[package]
+name = "untitled23"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+pyo3 = { version = "0.22.1", features = ["extension-module", "auto-initialize"] }
+rocket = { version = "0.5.1", features = ["json"] }
+rocket_sync_db_pools = { version = "0.1.0-rc.4", features = ["diesel_postgres_pool"] }
+serde = { version = "1.0.203", features = ["derive"] }
+serde_json = "1.0.117"
+diesel = {version = "2.2.1", features = ["postgres", "r2d2", "chrono", "serde_json"]}
+dotenvy = "0.15.7"
+bcrypt = "0.15.1"
+chrono = "0.4.38"
+jwt = "0.16.0"
+sha2 = "0.10.8"
+hmac = "0.12"
+thiserror = "1.0.61"

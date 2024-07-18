@@ -1,0 +1,6 @@
+[global.databases.postgres_db]
+url = "postgres://postgres:3467534675@localhost/Textyle"
+pool_size = 20
+[default]
+address = "0.0.0.0"
+port = 8000 # Use the port you prefer
