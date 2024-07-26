@@ -81,7 +81,7 @@ impl<'r> FromRequest<'r> for AuthenticatedUser {
             let token = request.headers().get_one("Authorization")
                 .map(|s| s.replace("Bearer ", ""));
             if let Some(token) = token {
-                let key: Hmac<Sha256> = Hmac::new_from_slice("secret_key".as_bytes()).expect("Invalid key length");
+                let key: Hmac<Sha256> = Hmac::new_from_slice(Secret_key.as_bytes()).expect("Invalid key length");
                 let claims: Claims = token.verify_with_key(&key).expect("Verify with key was broked");
                 if claims.exp > chrono::Utc::now().timestamp() as usize {
 
