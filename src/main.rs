@@ -192,12 +192,9 @@ async fn sign_up(user_form: Form<LoginForm>, db: DbConn)-> Result<status::Create
 
     Ok(status::Created::new("/").body(Json(new_user)))
 }
-#[options("/history")]
-fn options_history() -> &'static str {
-    ""
-}
 
 fn model_init(text: String, prompt: String) -> PyResult<String> {
+    //NOT WORKING FUNC, working one is stored at actual server
     Python::with_gil(|py| {
         let model = PyModule::import_bound(py, "model").expect("");
         let model_class = model.getattr("Model")?;
